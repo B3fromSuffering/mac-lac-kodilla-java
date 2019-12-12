@@ -1,36 +1,22 @@
 package com.kodilla.testing;
 
+import com.kodilla.testing.collection.OddNumbersExterminator;
 import com.kodilla.testing.user.SimpleUser;
 import com.kodilla.testing.calculator.Calculator;
+
+import java.util.ArrayList;
+
 public class TestingMain {
     public static void main(String[] args) {
 
-        SimpleUser simpleUser = new SimpleUser("theForumUser");
-        String result = simpleUser.getUsername();
+        ArrayList<Integer> numbers = new ArrayList<>();
+        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
 
-        if (result.equals("theForumUser")){
-            System.out.println("test OK");
-        } else {
-            System.out.println("Error!");
+        for(int n = 1; n<20; n++){
+            numbers.add(n);
         }
 
-        // Kalkulator test
-
-        System.out.println("Running calculator test...");
-        Calculator calculator = new Calculator();
-        int a = 10;
-        int b = 5;
-
-        if(calculator.add(a, b) == a + b){
-            System.out.println("adding test OK");
-        } else {
-            System.out.println("Error!");
-        }
-
-        if(calculator.substract(a, b) == a - b){
-            System.out.println("substracting test OK");
-        } else {
-            System.out.println("Error!");
-        }
+        ArrayList<Integer> evenNumbers = oddNumbersExterminator.exterminate(numbers);
+        System.out.println("This are even numbers" + evenNumbers);
     }
 }
