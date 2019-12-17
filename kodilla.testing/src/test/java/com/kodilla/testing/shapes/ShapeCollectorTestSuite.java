@@ -40,7 +40,7 @@ public class ShapeCollectorTestSuite {
         shapeCollector.addFigure(circle);
 
         //Then
-        Assert.assertEquals(circle, shapeCollector.shapeArrayList.get(0));
+        Assert.assertEquals(circle, shapeCollector.getFigure(0));
     }
 
     @Test
