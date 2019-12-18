@@ -45,7 +45,7 @@ public class StatisticsTestSuit {
         Assert.assertEquals(20, statisticsCalculator.postsQuantity);
         Assert.assertEquals(4, statisticsCalculator.averagePostsPerUser, 0.001);
         Assert.assertEquals(11, statisticsCalculator.averageCommentsPerUser, 0.001);
-        Assert.assertEquals(55/20, statisticsCalculator.averageCommentsPerPost, 0.001);
+        Assert.assertEquals(2.75, statisticsCalculator.averageCommentsPerPost, 0.001);
     }
     @Test           // gdy liczba postów = 0,
     public void testCalculateAveragesNoPosts(){
@@ -95,9 +95,9 @@ public class StatisticsTestSuit {
         Assert.assertEquals(5, statisticsCalculator.usersQuantity);
         Assert.assertEquals(55, statisticsCalculator.commentsQuantity);
         Assert.assertEquals(1000, statisticsCalculator.postsQuantity);
-        Assert.assertEquals(1000/5, statisticsCalculator.averagePostsPerUser, 0.001);
-        Assert.assertEquals(55/5, statisticsCalculator.averageCommentsPerUser, 0.001);
-        Assert.assertEquals(55/1000, statisticsCalculator.averageCommentsPerPost, 0.001);
+        Assert.assertEquals(200, statisticsCalculator.averagePostsPerUser, 0.001);
+        Assert.assertEquals(11, statisticsCalculator.averageCommentsPerUser, 0.001);
+        Assert.assertEquals(0.055, statisticsCalculator.averageCommentsPerPost, 0.001);
     }
     @Test           // gdy liczba komentarzy = 0,
     public void testCalculateAveragesNoComments(){
@@ -121,7 +121,7 @@ public class StatisticsTestSuit {
         Assert.assertEquals(5, statisticsCalculator.usersQuantity);
         Assert.assertEquals(0, statisticsCalculator.commentsQuantity);
         Assert.assertEquals(20, statisticsCalculator.postsQuantity);
-        Assert.assertEquals(20/5, statisticsCalculator.averagePostsPerUser, 0.001);
+        Assert.assertEquals(4, statisticsCalculator.averagePostsPerUser, 0.001);
         Assert.assertEquals(0, statisticsCalculator.averageCommentsPerUser, 0.001);
         Assert.assertEquals(0, statisticsCalculator.averageCommentsPerPost, 0.001);
     }
@@ -147,9 +147,9 @@ public class StatisticsTestSuit {
         Assert.assertEquals(5, statisticsCalculator.usersQuantity);
         Assert.assertEquals(55, statisticsCalculator.commentsQuantity);
         Assert.assertEquals(200, statisticsCalculator.postsQuantity);
-        Assert.assertEquals(200/5, statisticsCalculator.averagePostsPerUser, 0.001);
-        Assert.assertEquals(55/5, statisticsCalculator.averageCommentsPerUser, 0.001);
-        Assert.assertEquals(55/200, statisticsCalculator.averageCommentsPerPost, 0.001);
+        Assert.assertEquals(40, statisticsCalculator.averagePostsPerUser, 0.001);
+        Assert.assertEquals(11, statisticsCalculator.averageCommentsPerUser, 0.001);
+        Assert.assertEquals(0.275, statisticsCalculator.averageCommentsPerPost, 0.001);
     }
     @Test           //gdy liczba komentarzy > liczba postów,
     public void testCalculateAveragesMoreCommentsThanPosts(){
@@ -173,9 +173,9 @@ public class StatisticsTestSuit {
         Assert.assertEquals(5, statisticsCalculator.usersQuantity);
         Assert.assertEquals(550, statisticsCalculator.commentsQuantity);
         Assert.assertEquals(20, statisticsCalculator.postsQuantity);
-        Assert.assertEquals(20/5, statisticsCalculator.averagePostsPerUser, 0.001);
-        Assert.assertEquals(550/5, statisticsCalculator.averageCommentsPerUser, 0.001);
-        Assert.assertEquals(550/20, statisticsCalculator.averageCommentsPerPost, 0.001);
+        Assert.assertEquals(4, statisticsCalculator.averagePostsPerUser, 0.001);
+        Assert.assertEquals(110, statisticsCalculator.averageCommentsPerUser, 0.001);
+        Assert.assertEquals(27.5, statisticsCalculator.averageCommentsPerPost, 0.001);
     }
     @Test           //gdy liczba użytkowników = 0,
     public void testCalculateAveragesNoUsers(){
@@ -197,7 +197,7 @@ public class StatisticsTestSuit {
         Assert.assertEquals(20, statisticsCalculator.postsQuantity);
         Assert.assertEquals(0, statisticsCalculator.averagePostsPerUser, 0.001);
         Assert.assertEquals(0, statisticsCalculator.averageCommentsPerUser, 0.001);
-        Assert.assertEquals(55/20, statisticsCalculator.averageCommentsPerPost, 0.001);
+        Assert.assertEquals(2.75, statisticsCalculator.averageCommentsPerPost, 0.001);
     }
     @Test           //gdy liczba użytkowników = 100.
     public void testCalculateAveragesHundredUsers(){
@@ -220,8 +220,8 @@ public class StatisticsTestSuit {
         Assert.assertEquals(100, statisticsCalculator.usersQuantity);
         Assert.assertEquals(55, statisticsCalculator.commentsQuantity);
         Assert.assertEquals(20, statisticsCalculator.postsQuantity);
-        Assert.assertEquals(20/100, statisticsCalculator.averagePostsPerUser, 0.001);
-        Assert.assertEquals(55/100, statisticsCalculator.averageCommentsPerUser, 0.001);
-        Assert.assertEquals(55/20, statisticsCalculator.averageCommentsPerPost, 0.001);
+        Assert.assertEquals(0.2, statisticsCalculator.averagePostsPerUser, 0.001);
+        Assert.assertEquals(0.55, statisticsCalculator.averageCommentsPerUser, 0.001);
+        Assert.assertEquals(2.75, statisticsCalculator.averageCommentsPerPost, 0.001);
     }
 }

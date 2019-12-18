@@ -13,14 +13,14 @@ public class StatisticsCalculator {
         postsQuantity = statistics.postsCount();
         commentsQuantity = statistics.commentsCount();
         if(usersQuantity > 0) {
-            averagePostsPerUser = postsQuantity / usersQuantity;
-            averageCommentsPerUser = commentsQuantity / usersQuantity;
+            averagePostsPerUser = Double.valueOf(postsQuantity) / Double.valueOf(usersQuantity);
+            averageCommentsPerUser = Double.valueOf(commentsQuantity) / Double.valueOf(usersQuantity);
         }else{
             averagePostsPerUser = 0;
             averageCommentsPerUser = 0;
         }
         if (postsQuantity > 0) {
-            averageCommentsPerPost = commentsQuantity / postsQuantity;
+            averageCommentsPerPost = Double.valueOf(commentsQuantity) / Double.valueOf(postsQuantity);
         }else{
             averageCommentsPerPost = 0;
         }
