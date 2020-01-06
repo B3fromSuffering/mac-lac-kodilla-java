@@ -10,16 +10,20 @@ import com.kodilla.stream.lambda.ExpressionExecutor;
 import com.kodilla.stream.person.People;
 import com.kodilla.stream.reference.FunctionalCalculator;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import static java.time.temporal.ChronoUnit.DAYS;
+
+
 public class StreamMain {
     public static void main(String[] args) {
 
         // Zadanie: funkcyjny spacer po liscie uzytkownikow forum
-        LocalDate today = LocalDate.now();
+       /* LocalDate today = LocalDate.now();
         LocalDate twentyYearsAgo = today.minusYears(20);
         Forum forum = new Forum();
         Map<Integer, ForumUser> theResultMapOfForumUser = forum.getList().stream()
@@ -28,9 +32,13 @@ public class StreamMain {
                 .filter(forumUser -> forumUser.getPostsNumber() > 1)
                 .collect(Collectors.toMap(ForumUser::getUserID, forumUser -> forumUser));
 
-        System.out.println(theResultMapOfForumUser);
-
-
+        System.out.println(theResultMapOfForumUser);*/
+        LocalDate firstDate = LocalDate.now().minusDays(10);
+        LocalDate secondDate = LocalDate.now();
+        System.out.println(firstDate);
+        System.out.println(LocalDate.now());
+        System.out.println(DAYS.between(firstDate, secondDate));
+        double lll = DAYS.between(firstDate, secondDate);
     }
 
 
