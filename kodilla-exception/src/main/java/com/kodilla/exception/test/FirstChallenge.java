@@ -6,12 +6,28 @@ public class FirstChallenge {
 
         double result = 0;
 
+        if (b == 0) {
+            throw new ArithmeticException();
+        } else {
+            result = a / b;
+        }
+        return result;
+    }
+
+
+    /**
+     * This main can throw an ArithmeticException!!!
+     *
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        FirstChallenge firstChallenge = new FirstChallenge();
+
         try {
 
-            if(b == 0) {
-                throw new ArithmeticException();
-            }
-            result = a / b;
+            double result = firstChallenge.divide(3, 0);
+            System.out.println(result);
 
         } catch (ArithmeticException e) {
 
@@ -20,21 +36,7 @@ public class FirstChallenge {
         } finally {
 
             System.out.println("division completed!");
-            return result;
+
         }
-    }
-
-    /**
-     * This main can throw an ArithmeticException!!!
-     * @param args
-     */
-    public static void main(String[] args) {
-
-        FirstChallenge firstChallenge = new FirstChallenge();
-
-        double result = firstChallenge.divide(3, 0);
-
-        System.out.println(result);
-
     }
 }
