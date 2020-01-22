@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.*;
 
 public class RpsRunner{
@@ -19,8 +20,22 @@ public class RpsRunner{
             Scanner scanner = new Scanner(System.in);
             System.out.println("Podaj swoje imię");
             String name = scanner.nextLine();
-            System.out.println("Do ilu gramy zwycięstw?");
-            int rounds = scanner.nextInt();
+
+            int rounds = 0;
+            boolean itIsInt = false;
+            while (!itIsInt) {
+
+                try {
+                    System.out.println("Do ilu gramy zwycięstw?");
+                    Scanner scanInt = new Scanner(System.in);
+                    rounds = scanInt.nextInt();
+                    itIsInt = true;
+
+                } catch (Exception e) {
+                    System.out.println("Musisz podać liczbę naturalną!");
+                }
+            }
+
 
             // inicjalizacja statystyk + instrukcja gry
             Statistics statistics = new Statistics(name, rounds);
