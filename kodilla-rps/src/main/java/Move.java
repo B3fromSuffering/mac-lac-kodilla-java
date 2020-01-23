@@ -17,4 +17,9 @@ public class Move {
         Move move = (Move) o;
         return moveID == move.moveID;
     }
+
+    @Override
+    public String toString() {
+        return PossibleMoves.moves().get(moveID);
+    }
 }
