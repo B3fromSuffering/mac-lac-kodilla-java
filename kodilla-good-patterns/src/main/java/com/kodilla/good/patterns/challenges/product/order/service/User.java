@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.challenges.productOrderService;
+package com.kodilla.good.patterns.challenges.product.order.service;
 
 public class User {
 
@@ -16,12 +16,9 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    public void buyItem(){
 
-    }
-
-    public void sellItem(){
-
+    public void putItemForSale(String name, String category, int price){
+        Item item = new Item(name, category, price);
     }
 
     public void setAddress(String address) {

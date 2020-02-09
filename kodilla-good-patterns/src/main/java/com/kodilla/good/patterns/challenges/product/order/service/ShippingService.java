@@ -1,8 +1,6 @@
-package com.kodilla.good.patterns.challenges.productOrderService;
+package com.kodilla.good.patterns.challenges.product.order.service;
 
 public interface ShippingService {
-
-    public boolean postParcel();
 
     public boolean sendParcel();
 

@@ -1,17 +1,15 @@
-package com.kodilla.good.patterns.challenges.productOrderService;
+package com.kodilla.good.patterns.challenges.product.order.service;
 
 public class Item {
 
     private String name;
     private String category;
     private int price;
-    private User seller;
 
-    public Item(String name, String category, int price, User seller) {
+    public Item(String name, String category, int price) {
         this.name = name;
         this.category = category;
         this.price = price;
-        this.seller = seller;
     }
 
     public String getName() {
@@ -24,9 +22,5 @@ public class Item {
 
     public int getPrice() {
         return price;
-    }
-
-    public User getSeller() {
-        return seller;
     }
 }
