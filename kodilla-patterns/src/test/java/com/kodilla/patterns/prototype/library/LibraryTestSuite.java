@@ -1,6 +1,6 @@
 package com.kodilla.patterns.prototype.library;
 
-import com.kodilla.patterns.prototype.Board;
+import com.kodilla.patterns.prototype.library.Board;
 import org.junit.Assert;
 import org.junit.Test;
 

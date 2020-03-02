@@ -1,4 +1,4 @@
-package com.kodilla.patterns.prototype;
+package com.kodilla.patterns.prototype.library;
 
 import com.kodilla.patterns.prototype.library.Board;
 import com.kodilla.patterns.prototype.library.Task;
