@@ -1,5 +1,8 @@
-package com.kodilla.patterns.prototype;
+package com.kodilla.patterns.prototype.library;
 
+import com.kodilla.patterns.prototype.library.Board;
+import com.kodilla.patterns.prototype.library.Task;
+import com.kodilla.patterns.prototype.library.TasksList;
 import org.junit.Assert;
 import org.junit.Test;
 import java.util.stream.IntStream;
@@ -32,7 +35,7 @@ public class BoardTestSuite {
         board.getLists().add(listInProgress);
         board.getLists().add(listDone);
 
-        //making a shallow clone of object board
+        //making a shallow copy of object board
         Board clonedBoard = null;
         try {
             clonedBoard = board.shallowCopy();
@@ -40,12 +43,27 @@ public class BoardTestSuite {
         } catch (CloneNotSupportedException e) {
             System.out.println(e);
         }
-        System.out.println(board);
-        System.out.println(clonedBoard);
+
+        //making a deep copy of object board
+        Board deepClonedBoard = null;
+        try {
+            deepClonedBoard = board.deepCopy();
+            deepClonedBoard.setName("Project number 3");
+        } catch (CloneNotSupportedException e) {
+            System.out.println(e);
+        }
 
         //When
+        board.getLists().remove(listToDo);
+
         //Then
-        Assert.assertEquals(3, board.getLists().size());
-        Assert.assertEquals(3, clonedBoard.getLists().size());
+        System.out.println(board);
+        System.out.println(clonedBoard);
+        System.out.println(deepClonedBoard);
+        Assert.assertEquals(2, board.getLists().size());
+        Assert.assertEquals(2, clonedBoard.getLists().size());
+        Assert.assertEquals(3, deepClonedBoard.getLists().size());
+        Assert.assertEquals(clonedBoard.getLists(), board.getLists());
+        Assert.assertNotEquals(deepClonedBoard.getLists(), board.getLists());
     }
 }
