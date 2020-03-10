@@ -17,7 +17,6 @@ import java.math.BigDecimal;
 public class InvoiceDaoTestSuite {
     @Autowired
     private InvoiceDao invoiceDao;
-    private ItemDao itemDao;
 
     @Test
     public void testInvoiceDaoSave() {
@@ -40,10 +39,10 @@ public class InvoiceDaoTestSuite {
         item3.setInvoice(invoice);
         //When
         invoiceDao.save(invoice);
-        //int id = invoice.getId();
+        int id = invoice.getId();
         //Then
-        //Assert.assertNotEquals(0, id);
+        Assert.assertNotEquals(0, id);
         //CleanUp
-        //invoiceDao.deleteById(id);
+        invoiceDao.deleteById(id);
     }
 }
