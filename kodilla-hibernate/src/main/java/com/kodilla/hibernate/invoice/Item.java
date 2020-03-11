@@ -22,7 +22,7 @@ public class Item {
         this.product = product;
         this.price = price;
         this.quantity = quantity;
-        this.value = new BigDecimal(quantity).multiply(price);
+        this.value = price.multiply(new BigDecimal(quantity));
     }
 
     @ManyToOne
