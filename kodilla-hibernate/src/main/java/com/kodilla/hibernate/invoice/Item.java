@@ -18,14 +18,13 @@ public class Item {
     public Item() {
     }
 
-    public Item(Product product, BigDecimal price, int quantity) {
-        this.product = product;
+    public Item(BigDecimal price, int quantity) {
         this.price = price;
         this.quantity = quantity;
         this.value = price.multiply(new BigDecimal(quantity));
     }
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "INVOICE_ID")
     public Invoice getInvoice() {
         return invoice;
@@ -39,8 +38,8 @@ public class Item {
         return id;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "PRODUCT_ID")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "PRODUCT")
     public Product getProduct() {
         return product;
     }
